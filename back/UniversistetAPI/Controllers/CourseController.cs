@@ -9,7 +9,7 @@ namespace UniversistetAPI.Controllers
     [Route("api/courses")]
     public class CourseController : Controller
     {
-        private CourseContext _context;
+        private MainContext _context;
 
         private List<Course> _courses = new List<Course>()
         {
@@ -30,7 +30,7 @@ namespace UniversistetAPI.Controllers
             }
         };
 
-        public CourseController(CourseContext context)
+        public CourseController(MainContext context)
         {
             _context = context;
         }
