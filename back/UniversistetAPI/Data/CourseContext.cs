@@ -10,11 +10,6 @@ namespace UniversistetAPI.Data
 
         public CourseContext(DbContextOptions options): base(options)
         {
-            Database.EnsureCreated();
         }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite("Filename=Database/universitet_1.db");
-        //}
     }
 }

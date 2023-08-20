@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CourseContext>(options =>
-options.UseSqlite(builder.Configuration.GetConnectionString("UniversitetDb")));
+        options.UseSqlite(builder.Configuration.GetConnectionString("UniversitetDb")));
 
 var app = builder.Build();
 
