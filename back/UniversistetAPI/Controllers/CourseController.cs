@@ -11,25 +11,6 @@ namespace UniversistetAPI.Controllers
     {
         private MainContext _context;
 
-        private List<Course> _courses = new List<Course>()
-        {
-            new Course
-            {
-                Id = 1,
-                Name = "Программирование"
-            },
-            new Course
-            {
-                Id = 2,
-                Name = "История"
-            },
-            new Course
-            {
-                Id = 3,
-                Name = "Математика"
-            }
-        };
-
         public CourseController(MainContext context)
         {
             _context = context;
@@ -45,7 +26,7 @@ namespace UniversistetAPI.Controllers
         [HttpGet("{id}")]
         public Course GetById(int id)
         {
-            var course = _courses.Where(x=>x.Id == id).SingleOrDefault();
+            var course = _context.Courses.Where(x=>x.Id == id).SingleOrDefault();
 
             return course;
         }
