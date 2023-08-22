@@ -9,6 +9,7 @@ namespace UniversistetAPI.Data
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<CourseStudent> CourseStudents { get; set; }
+        public DbSet<CourseTeacher> CourseTeachers { get; set; }
 
         public MainContext(DbContextOptions options): base(options)
         {
