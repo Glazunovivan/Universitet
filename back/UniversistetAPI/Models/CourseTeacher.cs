@@ -17,16 +17,8 @@ namespace UniversistetAPI.Models
         [Column("_id_teacher")]
         public int TeacherId { get; set; }
 
-        /// <summary>
-        /// Ссылка на курс
-        /// </summary>
-        [ForeignKey("_id_course")]
-        public Course Course { get; set; }
+        public List<Course> Courses { get; set; }
 
-        /// <summary>
-        /// Ссылка на преподавателя
-        /// </summary>
-        [ForeignKey("_id_teacher")]
-        public Teacher Teacher { get; set; }
+        public List<Teacher> Teachers { get; set; }
     }
 }

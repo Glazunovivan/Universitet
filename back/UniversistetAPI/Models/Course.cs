@@ -23,5 +23,8 @@ namespace UniversistetAPI.Models
         }
 
         public List<Student> Students { get; set; }
+
+        //список учителей
+        public List<Teacher> Teachers { get; set; }
     }
 }
