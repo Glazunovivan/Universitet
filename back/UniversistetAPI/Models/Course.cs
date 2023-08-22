@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using UniversistetAPI.Extessions;
 
 
 namespace UniversistetAPI.Models
@@ -16,9 +17,7 @@ namespace UniversistetAPI.Models
             get => _name;
             set
             {
-                var result = char.ToUpper(value[0]) + value.Substring(1);
-                _name = result.ToString();
-               
+                _name = value.ToUpperFirstChar();
             }
         }
 
