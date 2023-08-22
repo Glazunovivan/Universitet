@@ -17,8 +17,8 @@ namespace UniversistetAPI.Models
         [Column("_id_teacher")]
         public int TeacherId { get; set; }
 
-        public List<Course> Courses { get; set; }
+        public Course Course { get; set; }
 
-        public List<Teacher> Teachers { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

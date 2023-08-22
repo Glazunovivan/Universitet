@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UniversistetAPI.Data;
 using UniversistetAPI.Models;
@@ -24,27 +23,23 @@ namespace UniversistetAPI.Controllers
         }
 
         [HttpPost]
-        public Course AddCourseForTeacher(int idTeacher, int idCourse )
+        public IActionResult AddCourseForTeacher(int idTeacher, int idCourse)
         {
-            var teacher = _context.Teachers.FirstOrDefault(t => t.Id == idTeacher);
-            var course = _context.Courses.FirstOrDefault(c => c.Id == idCourse);
+            if (_context.Teachers.Where(x => x.Id == idTeacher).SingleOrDefault() is null)
+                return Content("Преподаватель не найден");
+            if (_context.Courses.Where(x => x.Id == idCourse).SingleOrDefault() is null)
+                return Content("Курс не найден");
 
-            if (teacher == null || course == null)
-            {
-                // Обработайте ситуацию, если учитель или курс с заданными идентификаторами не найдены.
-                // Возможно, верните сообщение об ошибке или сгенерируйте исключение.
-            }
+            var newCourseTeacher = new CourseTeacher();
+            newCourseTeacher.CourseId = idCourse;
+            newCourseTeacher.TeacherId = idTeacher;
 
-            var teacherCourse = new CourseTeacher
-            {
-                TeacherId = idTeacher,
-                CourseId = idCourse
-            };
-            _context.CourseTeachers.Add(teacherCourse);
+            var course = _context.Courses.Where(x => x.Id == idCourse).SingleOrDefault();
+
+            _context.CourseTeachers.Add(newCourseTeacher);
             _context.SaveChanges();
 
-
-            return course;
+            return Content($"Курс {course} успешно");
         }
 
     }
