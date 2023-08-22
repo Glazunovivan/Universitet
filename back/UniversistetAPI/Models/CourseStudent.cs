@@ -3,7 +3,6 @@
 namespace UniversistetAPI.Models
 {
     [Table("courseStudent")]
-
     public class CourseStudent : Entity
     {
         /// <summary>
@@ -18,8 +17,8 @@ namespace UniversistetAPI.Models
         [Column("_id_student")]
         public int StudentId { get; set; }
 
-        public List<Course> Courses { get; set; }
+        public Course Course { get; set; }
 
-        public List<Student> Students { get; set; }
+        public Student Student { get; set; }
     }
 }

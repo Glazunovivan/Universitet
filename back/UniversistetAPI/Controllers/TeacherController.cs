@@ -34,10 +34,44 @@ namespace UniversistetAPI.Controllers
         [HttpPost]
         public Teacher AddTeacher(Teacher teacher)
         {
+            //if (string.IsNullOrWhiteSpace(teacher.Name))
+            //    return Ok("Укажите имя");
+
+            //if (string.IsNullOrWhiteSpace(teacher.Name))
+            //    return Ok("Укажите имя");
+
+
             _context.Teachers.Add(teacher);
             _context.SaveChanges();
 
             return teacher;
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteTeacher(int id)
+        {
+            if (_context.Teachers.Where(x => x.Id == id).SingleOrDefault() is null)
+            {
+                return Ok("Преподаватель не найден");
+            }
+
+            _context.Teachers.Remove(_context.Teachers.Where(x => x.Id == id).SingleOrDefault());
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
+        [HttpPut]
+        public ActionResult UpdateTeacher(Teacher teacher)
+        {
+            if (_context.Teachers.Where(x => x.Id == teacher.Id).SingleOrDefault() is null)
+            {
+                return Ok("Преподаватель не найден");
+            }
+            _context.Teachers.Update(teacher);
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }

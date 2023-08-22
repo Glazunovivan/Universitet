@@ -21,6 +21,7 @@ namespace UniversistetAPI.Models
                 _name = value.ToUpperFirstChar();
             }
         }
+
         /// <summary>
         /// Фамилия
         /// </summary>
@@ -33,6 +34,7 @@ namespace UniversistetAPI.Models
                 _lastName = value.ToUpperFirstChar();
             }
         }
+
         /// <summary>
         /// Отчество
         /// </summary>
