@@ -4,7 +4,7 @@ namespace UniversistetAPI.Models
 {
     [Table("courseStudent")]
 
-    public class CourseStudent
+    public class CourseStudent : Entity
     {
         /// <summary>
         /// Идентификатор курса

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace UniversistetAPI.Models.Persons
+namespace UniversistetAPI.Models
 {
     [Table("students")]
     public class Student : Person
