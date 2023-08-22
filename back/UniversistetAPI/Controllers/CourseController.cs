@@ -30,5 +30,22 @@ namespace UniversistetAPI.Controllers
 
             return course;
         }
+
+        [HttpPost]
+        public Course AddCourse(Course course)
+        {
+            _context.Courses.Add(course);
+            _context.SaveChanges();
+
+            return course;
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteCourser(int id)
+        {
+            _context.Courses.Remove(_context.Courses.Where(x=>x.Id == id).SingleOrDefault());
+            _context.SaveChanges();
+            return Ok();
+        }
     }
 }

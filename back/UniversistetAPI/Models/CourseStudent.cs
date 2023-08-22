@@ -16,18 +16,10 @@ namespace UniversistetAPI.Models
         /// Идентификатор преподавателя
         /// </summary>
         [Column("_id_student")]
-        public int TeacherId { get; set; }
+        public int StudentId { get; set; }
 
-        /// <summary>
-        /// Ссылка на курс
-        /// </summary>
-        [ForeignKey("_id_course")]
-        public Course Course { get; set; }
+        public List<Course> Courses { get; set; }
 
-        /// <summary>
-        /// Ссылка на студента
-        /// </summary>
-        [ForeignKey("_id_student")]
-        public Student Student { get; set; }
+        public List<Student> Students { get; set; }
     }
 }

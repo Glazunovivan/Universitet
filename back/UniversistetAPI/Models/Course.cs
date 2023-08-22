@@ -6,10 +6,22 @@ namespace UniversistetAPI.Models
     [Table("courses")]
     public class Course : Entity
     {
+        private string _name;
         /// <summary>
         /// Название
         /// </summary>
         [Column("_name")]
-        public string Name { get; set; }
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                var result = char.ToUpper(value[0]) + value.Substring(1);
+                _name = result.ToString();
+               
+            }
+        }
+
+        public List<Student> Students { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace UniversistetAPI.Models
     [Table("teachers")]
     public class Teacher : Person
     {
-        public List<Course> Courses { get; set; }
+        //public List<Course> Courses { get; set; }
     }
 }
  
