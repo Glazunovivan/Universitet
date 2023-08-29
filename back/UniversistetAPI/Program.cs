@@ -11,10 +11,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MainContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("UniversitetDb")));
+builder.Services.AddCors(options=>options.AddPolicy(name:"Student",
+    policy =>
+    {
+        policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+    }));
 
 var app = builder.Build();
 
-
+app.UseCors("Student");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

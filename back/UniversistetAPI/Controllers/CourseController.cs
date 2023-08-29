@@ -31,6 +31,27 @@ namespace UniversistetAPI.Controllers
             return course;
         }
 
+        /// <summary>
+        /// Обновить данные курса
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateCourse"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateCourse(int id, Course updateCourse)
+        {
+            var course = _context.Courses.Where(x => x.Id == id).SingleOrDefault();
+            if (course is null)
+            {
+                return BadRequest($"Курс с Id = {id} не найден");
+            }
+            course.Id = id;
+            course.Name = updateCourse.Name;
+            await _context.SaveChangesAsync();
+
+            return  Ok("Данные о курсе успешно обновлены");
+        }
+
         [HttpPost]
         public Course AddCourse(Course course)
         {
