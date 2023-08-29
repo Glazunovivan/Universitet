@@ -17,7 +17,7 @@ export class Student{
     
     addGroup(group: Group): boolean
     {
-        if()
+        if(group == null)
         {
             return false;
         }

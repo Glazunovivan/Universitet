@@ -5,7 +5,7 @@ import { Student } from '../models/student';
 import { environment } from '../environment';
 
 @Injectable({
-    provideIn: 'root'
+    providedIn: 'root'
 })
 export class StudentService{
     private url = 'Student';
