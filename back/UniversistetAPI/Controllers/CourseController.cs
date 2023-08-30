@@ -26,7 +26,10 @@ namespace UniversistetAPI.Controllers
         [HttpGet("{id}")]
         public Course GetById(int id)
         {
-            var course = _context.Courses.Where(x=>x.Id == id).SingleOrDefault();
+            var course = _context.Courses
+                        .Include(x=>x.CourseContent)    //подгружаем инфу о курсе
+                        .Include(x=>x.TopicCourse)
+                        .Where(x=>x.Id == id).SingleOrDefault();
 
             return course;
         }

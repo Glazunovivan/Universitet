@@ -21,6 +21,11 @@ namespace UniversistetAPI.Models
             }
         }
 
+        #region Инфо о курсе
+        public CourseContent CourseContent { get; set; }
+        public List<TopicCourse> TopicCourse { get; set; } = new();
+        #endregion
+
         public List<Student> Students { get; } = new();
         public List<CourseStudent> CourseStudents { get; } = new();
 
