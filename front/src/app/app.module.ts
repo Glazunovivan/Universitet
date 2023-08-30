@@ -6,6 +6,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { StudentsComponent } from './students/students.component';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -17,13 +18,14 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    StudentsComponent
+    StudentsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
