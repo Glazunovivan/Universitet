@@ -12,7 +12,7 @@ namespace UniversistetAPI.Models
         public int CourseId { get; set; }
 
         /// <summary>
-        /// Идентификатор преподавателя
+        /// Идентификатор студента
         /// </summary>
         [Column("_id_student")]
         public int StudentId { get; set; }

@@ -34,19 +34,17 @@ namespace UniversistetAPI.Controllers
         }
 
         [HttpPost]
-        public Student AddStudent(Student student)
+        public ActionResult AddStudent(Student student)
         {
-            //if (string.IsNullOrWhiteSpace(student.Name))
-            //    return Ok("Укажите имя");
-
-            //if (string.IsNullOrWhiteSpace(student.Name))
-            //    return Ok("Укажите имя");
-
+            if (string.IsNullOrWhiteSpace(student.Name))
+                return BadRequest("Укажите имя");
+            if (string.IsNullOrWhiteSpace(student.Lastname))
+                return BadRequest("Укажите фамилию");
 
             _context.Students.Add(student);
             _context.SaveChanges();
 
-            return student;
+            return Ok("Студент добавлен");
         }
 
         [HttpDelete("{id}")]
@@ -54,13 +52,13 @@ namespace UniversistetAPI.Controllers
         {
             if (_context.Students.Where(x => x.Id == id).SingleOrDefault() is null)
             {
-                return Ok("Студент не найден");
+                return BadRequest("Студент не найден");
             }
 
             _context.Students.Remove(_context.Students.Where(x => x.Id == id).SingleOrDefault());
             _context.SaveChanges();
 
-            return Ok();
+            return Ok("Студент удалён из системы");
         }
 
         [HttpPut]

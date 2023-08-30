@@ -17,9 +17,10 @@ namespace UniversistetAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GroupStudent>>> Get()
+        public async Task<ActionResult<IEnumerable<GroupTeacher>>> Get()
         {
-            return Ok(await _context.GroupTeachers.ToListAsync());
+            return Ok(await _context.GroupTeachers.Include(x=>x.Group).Include(x=>x.Teacher)
+                            .ToListAsync());
         }
 
         [HttpPost]
