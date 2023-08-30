@@ -34,7 +34,7 @@ namespace UniversistetAPI.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddStudent(Student student)
+        public IActionResult AddStudent(Student student)
         {
             if (string.IsNullOrWhiteSpace(student.Name))
                 return BadRequest("Укажите имя");
@@ -44,7 +44,7 @@ namespace UniversistetAPI.Controllers
             _context.Students.Add(student);
             _context.SaveChanges();
 
-            return Ok("Студент добавлен");
+            return Ok(student);
         }
 
         [HttpDelete("{id}")]

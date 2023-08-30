@@ -9,7 +9,7 @@ namespace UniversistetAPI.Models
         /// Идентификатор курса
         /// </summary>
         [Column("_id_group")]
-        public int CourseId { get; set; }
+        public int GroupId { get; set; }
 
         /// <summary>
         /// Идентификатор преподавателя

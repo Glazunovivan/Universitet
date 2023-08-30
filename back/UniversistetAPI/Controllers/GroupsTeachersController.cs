@@ -32,7 +32,7 @@ namespace UniversistetAPI.Controllers
                 return Content("Группа не найдена");
 
             var newGroupTeacher = new GroupTeacher();
-            newGroupTeacher.CourseId = idGroup;
+            newGroupTeacher.GroupId = idGroup;
             newGroupTeacher.TeacherId = idTeacher;
 
             var group = _context.Groups.Where(x => x.Id == idGroup).SingleOrDefault();

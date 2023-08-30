@@ -13,13 +13,14 @@ import { GroupsComponent } from './components/groups/groups.component';
 import { StudentEditComponent } from './students/student-edit/student-edit.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { TeachersComponent} from './teachers/teachers.component';
-import { CoursesComponent } from './courses/courses.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'students', component: StudentsComponent},
+  {path:'student-edit', component: StudentEditComponent},
   {path: 'groups',component: GroupsComponent},
-  {path: 'courses', component: CoursesComponent}
+  {path: 'courses', component: CoursesComponent},
   {path: 'teachers',component: TeachersComponent},
   {path: 'courses',component: CoursesComponent},
 ]
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

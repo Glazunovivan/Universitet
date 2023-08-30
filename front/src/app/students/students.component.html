@@ -1,5 +1,7 @@
 <div class="container-sm mt-5 mb-5" 
     style="width: 80%; height: 500px; overflow-y: scroll;">
+    <!--<input type="button" value="Добавить" class="btn btn-primary mb-2" (click)="addStudent()" /> -->
+    <a href="/student-edit" class="btn btn-primary mb-2">Добавить</a>
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
@@ -16,10 +18,8 @@
                 <td scope="row">{{st.lastname}}</td>
                 <td scope="row">{{st.name}}</td>
                 <td scope="row">{{st.middlename}}</td>
-                <td scope="row">{{st.group.name}}</td>
-                <td>
-                    <button class="btn btn-sm btn-primary" (click)="openStudent(st)">Изменить</button>
-                </td>
+                <td scope="row">{{st.group?.name}}</td>
+                <td><button class="btn btn-sm btn-primary" (click)="openStudent(st)">Изменить</button></td>
             </tr>
         </tbody>
     </table>
