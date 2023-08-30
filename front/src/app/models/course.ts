@@ -5,5 +5,5 @@ export class Course{
     id?: number;
     name = "";
     content: ContentCourse;
-    topics: Topic[];
+    topics?: Topic[];
 }

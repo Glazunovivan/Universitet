@@ -6,12 +6,11 @@ export class Student{
     lastname = "";
     middlename = "";
     group: Group;
-    
-    constructor(Name: string, Lastname: string, Middlename: string, group: Group){
+
+    constructor(Name: string, Lastname: string, Middlename: string){
         this.name = Name;
         this.lastname = Lastname;
         this.middlename = Middlename;
-        this.group = group;
     }
 
     public addGroup(group: Group): boolean

@@ -11,11 +11,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GroupsComponent } from './components/groups/groups.component';
 import { StudentEditComponent } from './students/student-edit/student-edit.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'students', component: StudentsComponent},
-  {path: 'groups',component: GroupsComponent}
+  {path: 'groups',component: GroupsComponent},
+  {path: 'courses', component: CoursesComponent}
 ]
 
 @NgModule({
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     GroupsComponent,
     HeaderComponent,
     FooterComponent,
-    StudentEditComponent
+    StudentEditComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,

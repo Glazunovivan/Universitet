@@ -1,0 +1,9 @@
+<div class="container-fluid" *ngFor="let c of courses"> 
+        <div class="card mt-2 mr-2 ml-2" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{c.name}}</h5>
+              <p class="card-text" *ngIf="c.content !== undefined">{{c.content.description}}</p>
+              <a href="#" class="btn btn-primary mt-5">Открыть курс</a>
+            </div>
+        </div>
+</div>

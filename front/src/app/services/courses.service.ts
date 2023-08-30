@@ -14,6 +14,7 @@ export class CoursesService {
 
   public getAll() : Observable<Course[]>
   {
+      console.log(this.http.get<Course[]>(`${environment.apiUrl}/${this.url}`));
       return this.http.get<Course[]>(`${environment.apiUrl}/${this.url}`); 
   }
 }
