@@ -1,13 +1,19 @@
 .home-page .content {
-    text-align: left;
-  }
+  text-align: left;
+}
+ 
+@font-face {
+font-family: Chalk;
+src: url(src/assets/fonts/Chalk.ttf) format("truetype");
+} 
+
+.home-page .content h1 { 
+font-size: 70px; 
+font-family: "Chalk", Arial, sans-serif; 
+} 
   
- .home-page .content h1 {
-    font-size: 40px;
-    font-family: Arial, sans-serif; 
-  }
-  
-  .home-page .content p {
-    font-size: 25px;
-  }
+.home-page .content p {
+  font-size: 30px;
+  font-family: "Chalk", Arial, sans-serif; 
+}
   
