@@ -8,6 +8,7 @@ namespace UniversistetAPI.Models
     public class Group : Entity
     {
         private string _name;
+
         /// <summary>
         /// Название
         /// </summary>
