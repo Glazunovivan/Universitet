@@ -16,4 +16,15 @@ export class TeachersService {
   {
       return this.http.get<Teacher[]>(`${environment.apiUrl}/${this.url}`); 
   }
+
+  public getTeacher(data: Teacher){
+    return this.http.get<Teacher>(`${environment.apiUrl}/${this.url}/${data.id}`); 
+  }
+
+  public updateTeacher(data: Teacher){
+    return this.http.put<Teacher>(`${environment.apiUrl}/${this.url}`,data);
+  }
+  public deleteTeacher(data: Teacher){
+    return this.http.delete<Teacher>(`${environment.apiUrl}/${this.url}/${data.id}`);
+  }
 }

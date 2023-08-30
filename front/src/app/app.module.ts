@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GroupsComponent } from './components/groups/groups.component';
+import { StudentEditComponent } from './students/student-edit/student-edit.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -22,9 +23,11 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     StudentsComponent,
+    StudentEditComponent,
     GroupsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    StudentEditComponent
   ],
   imports: [
     BrowserModule,

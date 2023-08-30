@@ -12,8 +12,26 @@ export class StudentService{
 
     constructor(private http: HttpClient) { }
 
-    public getStudents() : Observable<Student[]>
+    public getAll() : Observable<Student[]>
     {
         return this.http.get<Student[]>(`${environment.apiUrl}/${this.url}`); 
     }
+    public getStudent(data: Student){
+        return this.http.get<Student[]>(`${environment.apiUrl}/${this.url}/${data.id}`); 
+    }
+
+    public addStudent(data: Student){
+        return this.http.post<Student>(`${environment.apiUrl}/${this.url}`,data);
+    }
+
+    public deleteStudent(id: number)
+    {
+        return this.http.delete<Student>(`${environment.apiUrl}/${this.url}/${id}`);
+    }
+
+    public updateStudent(data: Student)
+    {
+        return this.http.put<Student>(`${environment.apiUrl}/${this.url}`,data);
+    }
+
 }
