@@ -1,19 +1,20 @@
-import { Course } from "./course";
 import { Group } from "./group";
 
 export class Student{
-    id?: number;
+    id: number;
     name = "";
     lastname = "";
     middlename = "";
-    constructor(Name: string, Lastname: string, Middlename: string){
+    group: Group;
+    
+    constructor(Name: string, Lastname: string, Middlename: string, group: Group){
         this.name = Name;
         this.lastname = Lastname;
         this.middlename = Middlename;
+        this.group = group;
     }
 
-    
-    addGroup(group: Group): boolean
+    public addGroup(group: Group): boolean
     {
         if(group == null)
         {

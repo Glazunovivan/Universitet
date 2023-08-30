@@ -9,11 +9,12 @@ import { StudentsComponent } from './students/students.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GroupsComponent } from './components/groups/groups.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'students', component: StudentsComponent},
-
+  {path: 'groups',component: GroupsComponent}
 ]
 
 @NgModule({
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     StudentsComponent,
+    GroupsComponent,
     HeaderComponent,
     FooterComponent
   ],

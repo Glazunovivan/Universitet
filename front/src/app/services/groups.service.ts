@@ -8,7 +8,7 @@ import { environment } from '../environment';
   providedIn: 'root'
 })
 export class GroupsService {
-  private url = 'Group';
+  private url = 'groups';
 
   constructor(private http: HttpClient) { }
 
