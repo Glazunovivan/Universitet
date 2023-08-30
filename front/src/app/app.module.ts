@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { StudentsComponent } from './students/students.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     StudentsComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
