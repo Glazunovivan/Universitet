@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-
+import { StudentService } from '../services/student.services';
+import { Student } from '../models/student';
 @Component({
     selector: 'app-students',
     templateUrl: './students.component.html',
@@ -8,10 +8,16 @@ import { HeaderComponent } from '../header/header.component';
 })
 
 export class StudentsComponent implements OnInit{
-    constructor(){
+    
+    students: Student[] = [];
+
+    constructor(private studentService: StudentService){
 
     }
     ngOnInit(): void{
-
+        this.studentService
+            .getStudents()
+            .subscribe((result: Student[]) => (this.students = result));
+       
     }
 }

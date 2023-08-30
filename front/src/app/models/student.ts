@@ -6,8 +6,6 @@ export class Student{
     name = "";
     lastname = "";
     middlename = "";
-    group: Group;
-
     constructor(Name: string, Lastname: string, Middlename: string){
         this.name = Name;
         this.lastname = Lastname;
@@ -21,7 +19,6 @@ export class Student{
         {
             return false;
         }
-        this.group = group;
         return true;
     };
 }
