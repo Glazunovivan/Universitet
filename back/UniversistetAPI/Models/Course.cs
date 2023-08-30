@@ -24,7 +24,7 @@ namespace UniversistetAPI.Models
         public List<Student> Students { get; } = new();
         public List<CourseStudent> CourseStudents { get; } = new();
 
-        public List<Teacher> Teachers { get; set; }
+        public List<Teacher> Teachers { get; set; } = new();
         public List<CourseTeacher> CourseTeachers { get; } = new();
 
     }
