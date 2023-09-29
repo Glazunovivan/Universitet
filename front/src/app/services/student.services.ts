@@ -16,12 +16,16 @@ export class StudentService{
     {
         return this.http.get<Student[]>(`${environment.apiUrl}/${this.url}`); 
     }
-    public getStudent(data: Student){
+    public getStudent(data: Student): Observable<Student[]>{
         return this.http.get<Student[]>(`${environment.apiUrl}/${this.url}/${data.id}`); 
     }
 
+    public getStudentById(id: number): Observable<Student>{
+        return this.http.get<Student>(`${environment.apiUrl}/${this.url}/${id}`); 
+    }
+
     public addStudent(data: Student){
-        return this.http.post<Student>(`${environment.apiUrl}/${this.url}`,data);
+        return this.http.post<Student>(`${environment.apiUrl}/${this.url}`, data);
     }
 
     public deleteStudent(id: number)

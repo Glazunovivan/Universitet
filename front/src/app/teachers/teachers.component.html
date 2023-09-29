@@ -1,5 +1,7 @@
+<script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
 <div class="container-sm mt-5 mb-5" 
     style="width: 80%; height: 500px; overflow-y: scroll;">
+    <a href="/teacher-edit" class="btn btn-primary mb-2">Добавить</a>
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
@@ -10,6 +12,18 @@
             </tr>
         </thead>
         <tbody>
+            <tr data-href="https://google.com/">
+                <td scope="row">1</td>
+                <td scope="row">Петров</td>
+                <td scope="row">Петр</td>
+                <td scope="row">Петрович</td>
+            </tr>
+            <tr data-href="https://google.com/">
+                <td scope="row">2</td>
+                <td scope="row">Петров</td>
+                <td scope="row">Петр</td>
+                <td scope="row">Петрович</td>
+            </tr>
             <tr *ngFor="let te of teachers">
                 <td scope="row">{{te.id}}</td>
                 <td scope="row">{{te.lastname}}</td>
@@ -19,3 +33,12 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", ()=> {
+        const rows = document.querySelectorAll("tr[data-href]");
+        console.log(rows);
+    });
+ </script>
+
+

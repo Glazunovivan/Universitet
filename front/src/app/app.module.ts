@@ -14,14 +14,17 @@ import { StudentEditComponent } from './students/student-edit/student-edit.compo
 import { CoursesComponent } from './components/courses/courses.component';
 import { TeachersComponent} from './teachers/teachers.component';
 import { FormsModule } from '@angular/forms';
+import { TeacherEditComponent } from './components/teacher-edit/teacher-edit.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'students', component: StudentsComponent},
   {path:'student-edit', component: StudentEditComponent},
+  {path:'student-edit/:id', component: StudentEditComponent},
   {path: 'groups',component: GroupsComponent},
   {path: 'courses', component: CoursesComponent},
   {path: 'teachers',component: TeachersComponent},
+  {path: 'teacher-edit',component: TeacherEditComponent},
   {path: 'courses',component: CoursesComponent},
 ]
 

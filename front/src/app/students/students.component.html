@@ -13,13 +13,21 @@
             </tr>
         </thead>
         <tbody>
+            <!--<tr>
+                <td scope="row">1</td>
+                <td scope="row">Иванов</td>
+                <td scope="row">Иван</td>
+                <td scope="row">Иванович</td>
+                <td scope="row"></td>
+                <td><button class="btn btn-sm btn-primary" (click)="openStudentById(1)">Изменить</button></td>
+            </tr>-->
             <tr *ngFor="let st of students">
                 <td scope="row">{{st.id}}</td>
                 <td scope="row">{{st.lastname}}</td>
                 <td scope="row">{{st.name}}</td>
                 <td scope="row">{{st.middlename}}</td>
                 <td scope="row">{{st.group?.name}}</td>
-                <td><button class="btn btn-sm btn-primary" (click)="openStudent(st)">Изменить</button></td>
+                <td><button class="btn btn-sm btn-primary" (click)="openStudentById(st.id!)">Изменить</button></td>
             </tr>
         </tbody>
     </table>
